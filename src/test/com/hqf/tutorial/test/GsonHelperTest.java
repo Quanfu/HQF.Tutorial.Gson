@@ -5,6 +5,7 @@ import com.hqf.tutorial.gson.GsonHelper;
 import com.hqf.tutorial.gson.ProductPriceAduit;
 import com.hqf.tutorial.gson.ProductService;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -104,7 +105,9 @@ public class GsonHelperTest {
         ProductPriceAduit productPriceAduit= GsonHelper.gson().fromJson(json,ProductPriceAduit.class);
         System.out.println(productPriceAduit.getProductId());
         System.out.println(productPriceAduit.getCityAreas().toArray().length);
+        Assert.assertEquals(1,productPriceAduit.getCityAreas().toArray().length);
         System.out.println(productPriceAduit.getProductServices().toArray().length);
+        Assert.assertEquals(1,productPriceAduit.getProductServices().toArray().length);
     }
 
 
